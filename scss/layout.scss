@@ -1,0 +1,30 @@
+* {
+	box-sizing: border-box;
+}
+
+* + * {
+	margin-bottom: 1.5em;
+}
+
+body {
+	font-size: 16px;
+	background-color: #1d1d1d;
+	background-image: url('../images/wave3.png'),
+					  url('../images/wave1.png') ,
+					  url('../images/wave2.png');
+	background-position: 0% 100%, 0% 100%, 0% 100%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	animation: wave 3s infinite alternate ease-in-out;
+	overflow: hidden;
+}
+
+@keyframes wave {
+	0% {
+		background-position: 0% 100%, 0% 100%, 0% 100%;
+	}
+
+	100% {
+		background-position: 50% 25%, 50% 25%, 50% 25%;
+	}
+}
