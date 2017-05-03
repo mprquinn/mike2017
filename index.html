@@ -1,11 +1,20 @@
 <html>
 <head>
 	<title>Mike Quinn | Calgary Web Developer</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="https://fonts.googleapis.com/css?family=Cormorant:400,400i,700,700i,Lato:400,700" rel="stylesheet">
 	<script src="https://use.fontawesome.com/3e3f9f9617.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<style>
+		.cubes {
+
+		}
+	</style>
 </head>
 <body>
+	<div class="cubes">
+		
+	</div>
 	<a href="#" class="menu__toggle">
 		<i class="fa fa-bars menu__toggle__open" aria-hidden="true"></i>
 		<i class="fa fa-times menu__toggle__close" aria-hidden="true"></i>
@@ -55,7 +64,7 @@
 		
 	</section>
 
-		<div class="copyright">💩 Mike, 2017</div>
+		<!-- <div class="copyright">Mike, 2017</div> -->
 	<script>
 		/*--------------------------------------
 
@@ -104,6 +113,43 @@
 			menu.classList.toggle('menu--opened');
 			menuToggle.classList.toggle('menu--opened');
 		}
+
+		
+
+		function generateCubes() {
+
+			const cubesL = 9,
+				  cubes = [],
+				  container = document.querySelector('.cubes');
+
+			for (let i = 0; i < cubesL; i++) {
+				const rotationX = Math.random() * 360,
+					  rotationY = Math.random() * 360,
+					  size = Math.floor(Math.random() * (0.8 - 0.3 + 1)) + 0.3;
+					  positionX = (Math.random() * (window.innerWidth - 200)),
+					  positionY = (Math.random() * (window.innerHeight - 200));
+					  console.log(size)
+				const cube = `
+					<div class="cube__animation-wrapper" style="position: absolute; top: ${positionY}; left: ${positionX};">
+						<div class="cube" style="transform: scale(${size}) rotateX(${rotationX}deg) rotateY(${rotationY}deg);">
+							<div class="cube__face cube__face--front"></div>
+							<div class="cube__face cube__face--back"></div>
+							<div class="cube__face cube__face--top"></div>
+							<div class="cube__face cube__face--bottom"></div>
+							<div class="cube__face cube__face--left"></div>
+							<div class="cube__face cube__face--right"></div>
+						</div>
+					</div>
+				`;
+
+				cubes.push(cube);
+				container.innerHTML += cube;
+			}
+		}
+
+		generateCubes();
+
+
 
 	</script>
 

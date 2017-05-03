@@ -8,15 +8,20 @@
 
 body {
 	font-size: 16px;
-	background-color: #1d1d1d;
-	background-image: url('../images/wave3.png'),
-					  url('../images/wave1.png') ,
-					  url('../images/wave2.png');
-	background-position: 0% 100%, 0% 100%, 0% 100%;
-	background-size: cover;
-	background-repeat: no-repeat;
-	animation: wave 3s infinite alternate ease-in-out;
+	background-color: #efefef;
+	// background-image: url('../images/wave3.png'),
+	// 				  url('../images/wave1.png') ,
+	// 				  url('../images/wave2.png');
+	// background-position: 0% 100%, 0% 100%, 0% 100%;
+	// // background-size: cover;
+	// background-size: 100% auto;
+	// background-repeat: repeat-x;
+	// animation: wave 3s infinite alternate ease-in-out;
 	overflow: hidden;
+
+	@media screen and (max-height: 600px) {
+		overflow: scroll;
+	}
 }
 
 @keyframes wave {
@@ -25,6 +30,6 @@ body {
 	}
 
 	100% {
-		background-position: 50% 25%, 50% 25%, 50% 25%;
+		background-position: 100% 25%, 50% 25%, 50% 25%;
 	}
 }
