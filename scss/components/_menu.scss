@@ -4,7 +4,7 @@
 	position: fixed;
 	top: 0;
 	right: 0;
-	background: rgba(255,255,255,0.9);
+	background: rgba(0,0,0,0.9);
 	text-align: center;
 	transform: translateY(-100%);
 	transition: all 0.4s ease-out;
@@ -21,13 +21,13 @@
 	top: 40px;
 	right: 40px;
 	font-size: 2em;
-	color: #efefef;
+	color: #1d1d1d;
 	text-align: center;
 	text-decoration: none;
 	z-index: 3;
 
 	&.menu--opened {
-		color: #1d1d1d;
+		color: #efefef;
 	}	
 }
 
@@ -67,6 +67,7 @@
 	font-weight: 700;
 	text-transform: uppercase;
 	text-decoration: line-through;
+	color: #efefef;
 
 	@media screen and (min-width: 950px) {
 		font-size: 6em;

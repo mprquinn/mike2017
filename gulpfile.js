@@ -1,12 +1,35 @@
 var gulp = require('gulp');
 var gutil = require('gulp-util');
 var sass = require('gulp-sass');
+// var minify = require('gulp-minify');
+var minify = require('gulp-babel-minify');
 // var scsslint = require('gulp-scsslint');
 
 var sourcemaps = require('gulp-sourcemaps');
 
 gulp.task('default', function() {
   gulp.watch('./scss/**', ['scss']);
+  gulp.watch('./js/**', ['min']);
+});
+
+gulp.task('compress', function () {
+    return gulp.src('./js/*.js')
+        .pipe(minify({
+            ext: {
+                src: '.js',
+                min: '.js'
+            }
+        })).pipe(gulp.dest('./build/js/'))
+});
+
+gulp.task('min', function () {
+    return gulp.src('./js/*.js')
+        .pipe(minify({
+            ext: {
+                src: '.js',
+                min: '.js'
+            }
+        })).pipe(gulp.dest('./build/js/'))
 });
 
 gulp.task('scss', function (){
