@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
 /**
  * 1. Change the default font family in all browsers (opinionated).
@@ -455,36 +456,32 @@ template {
 }
 
 body {
-  font-size: 16px;
-  background-color: #efefef;
-  overflow: hidden;
+  font-family: lato, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.4em;
+  color: #333333;
+  background-image: linear-gradient(-225deg, #efefef 0%, #ffffff 100%);
 }
 
-@media screen and (max-height: 600px) {
-  body {
-    overflow: scroll;
-  }
-}
-
-@keyframes wave {
-  0% {
-    background-position: 0% 100%, 0% 100%, 0% 100%;
-  }
-  100% {
-    background-position: 100% 25%, 50% 25%, 50% 25%;
-  }
+section {
+  display: flex;
+  height: 100vh;
+  align-items: center;
 }
 
 .menu {
   width: 100%;
   height: 100vh;
+  display: flex;
+  align-items: center;
   position: fixed;
   top: 0;
   right: 0;
   background: rgba(0, 0, 0, 0.9);
   text-align: center;
   transform: translateY(-100%);
-  transition: all 0.4s ease-out;
+  transition: all 0.2s ease-out;
 }
 
 .menu.menu--opened {
@@ -494,10 +491,10 @@ body {
 }
 
 .menu__toggle {
-  position: absolute;
-  top: 40px;
-  right: 40px;
-  font-size: 2em;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 1.66em;
   color: #1d1d1d;
   text-align: center;
   text-decoration: none;
@@ -524,35 +521,125 @@ body {
 }
 
 .menu__items {
+  width: 100%;
   list-style: none;
-  padding-top: 6em;
-  transform: translateY(-50%);
-  transition: all 0.4s ease-out;
+  text-align: center;
+  padding-left: 0;
+  transform: translateX(-100%);
+  transition: 0.15s all 0.2s ease-out;
 }
 
 .menu--opened .menu__items {
-  transform: translateY(0);
+  transform: translateX(0);
 }
 
 .menu__item {
-  font-family: "Cormorant", serif;
-  font-size: 3em;
+  font-family: lato, sans-serif;
+  font-size: 1.66em;
   font-weight: 700;
   text-transform: uppercase;
   text-decoration: line-through;
   color: #efefef;
+  margin-bottom: 2rem;
 }
 
-@media screen and (min-width: 950px) {
-  .menu__item {
-    font-size: 6em;
+.intro a {
+  display: inline-block;
+  position: relative;
+  color: #333333;
+  text-decoration: none;
+  padding: 0.2em 0.05em;
+  border-bottom: 2px solid #333333;
+}
+
+.intro a:hover {
+  color: #efefef;
+}
+
+.intro a:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 0;
+  top: 50%;
+  right: 50%;
+  bottom: 50%;
+  left: 50%;
+  background: #333333;
+  z-index: -1;
+  transition: all 0.1s cubic-bezier(0, 0.59, 1, 0.26);
+}
+
+.intro a:hover:after {
+  width: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.intro__container {
+  width: 50%;
+  max-width: 768px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+@media screen and (max-width: 700px) {
+  .intro__container {
+    width: 75%;
   }
 }
 
+.intro__name {
+  position: relative;
+  font-family: cardo, serif;
+  font-size: 2.6em;
+  font-weight: 700;
+  color: #333333;
+  line-height: 1.2em;
+  letter-spacing: 0.03em;
+  margin-bottom: 1rem;
+}
+
+.intro__subhead {
+  position: relative;
+  font-family: cardo, serif;
+  font-size: 1.33em;
+  margin-top: 0;
+  margin-bottom: 2.66em;
+}
+
+.intro__subhead:after {
+  content: '†';
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 133%;
+  transform: rotateZ(180deg);
+}
+
+.intro__details em {
+  font-family: cardo, serif;
+}
+
+.intro__sites {
+  padding-left: 0;
+}
+
+.intro__sites li {
+  display: inline-block;
+  margin-right: 1.3em;
+}
+
+.intro__sites li:last-of-type {
+  margin-right: 0;
+}
+
 .copyright {
-  position: fixed;
-  bottom: 40px;
   width: 100%;
+  font-family: cardo, serif;
+  font-size: 0.8em;
   text-align: center;
   color: #cccccc;
 }
