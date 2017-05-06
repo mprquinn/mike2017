@@ -1,13 +1,15 @@
 .menu {
 	width: 100%;
 	height: 100vh;
+	display: flex;
+	align-items: center;
 	position: fixed;
 	top: 0;
 	right: 0;
 	background: rgba(0,0,0,0.9);
 	text-align: center;
 	transform: translateY(-100%);
-	transition: all 0.4s ease-out;
+	transition: all 0.2s ease-out;
 
 	&.menu--opened {
 		opacity: 1;
@@ -17,10 +19,10 @@
 }
 
 .menu__toggle {
-	position: absolute;
-	top: 40px;
-	right: 40px;
-	font-size: 2em;
+	position: fixed;
+	top: 20px;
+	right: 20px;
+	font-size: 1.66em;
 	color: #1d1d1d;
 	text-align: center;
 	text-decoration: none;
@@ -51,26 +53,24 @@
 
 .menu__items {
 	// opacity: 0;
+	width: 100%;
 	list-style: none;
-	padding-top: 6em;
-	transform: translateY(-50%);
-	transition: all 0.4s ease-out;
+	text-align: center;
+	padding-left: 0;
+	transform: translateX(-100%);
+	transition: 0.15s all 0.2s ease-out;
 
 	.menu--opened & {
-		transform: translateY(0);
+		transform: translateX(0);
 	}
 }
 
 .menu__item {
-	font-family: $cormorant;
-	font-size: 3em;
+	font-family: lato, sans-serif;
+	font-size: 1.66em;
 	font-weight: 700;
 	text-transform: uppercase;
 	text-decoration: line-through;
 	color: #efefef;
-
-	@media screen and (min-width: 950px) {
-		font-size: 6em;
-	}
+	margin-bottom: 2rem;
 }
-

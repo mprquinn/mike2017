@@ -1,0 +1,1 @@
+;(()=>{const c=document.querySelector('.menu__toggle'),d=document.querySelector('.intro'),e=document.querySelector('.menu');let f=!1;window.addEventListener('load',()=>{a()});c.addEventListener('click',b);function a(){d.classList.add('intro--loaded')}function b(){b=!b;e.classList.toggle('menu--opened');c.classList.toggle('menu--opened')}})();

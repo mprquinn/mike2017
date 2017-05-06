@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
 /**
  * 1. Change the default font family in all browsers (opinionated).
@@ -455,36 +456,32 @@ template {
 }
 
 body {
-  font-size: 16px;
-  background-color: #efefef;
-  overflow: hidden;
+  font-family: lato, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.4em;
+  color: #333333;
+  background-image: linear-gradient(-225deg, #efefef 0%, #ffffff 100%);
 }
 
-@media screen and (max-height: 600px) {
-  body {
-    overflow: scroll;
-  }
-}
-
-@keyframes wave {
-  0% {
-    background-position: 0% 100%, 0% 100%, 0% 100%;
-  }
-  100% {
-    background-position: 100% 25%, 50% 25%, 50% 25%;
-  }
+section {
+  display: flex;
+  height: 100vh;
+  align-items: center;
 }
 
 .menu {
   width: 100%;
   height: 100vh;
+  display: flex;
+  align-items: center;
   position: fixed;
   top: 0;
   right: 0;
   background: rgba(0, 0, 0, 0.9);
   text-align: center;
   transform: translateY(-100%);
-  transition: all 0.4s ease-out;
+  transition: all 0.2s ease-out;
 }
 
 .menu.menu--opened {
@@ -494,10 +491,10 @@ body {
 }
 
 .menu__toggle {
-  position: absolute;
-  top: 40px;
-  right: 40px;
-  font-size: 2em;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 1.66em;
   color: #1d1d1d;
   text-align: center;
   text-decoration: none;
@@ -524,221 +521,125 @@ body {
 }
 
 .menu__items {
+  width: 100%;
   list-style: none;
-  padding-top: 6em;
-  transform: translateY(-50%);
-  transition: all 0.4s ease-out;
+  text-align: center;
+  padding-left: 0;
+  transform: translateX(-100%);
+  transition: 0.15s all 0.2s ease-out;
 }
 
 .menu--opened .menu__items {
-  transform: translateY(0);
+  transform: translateX(0);
 }
 
 .menu__item {
-  font-family: "Cormorant", serif;
-  font-size: 3em;
+  font-family: lato, sans-serif;
+  font-size: 1.66em;
   font-weight: 700;
   text-transform: uppercase;
   text-decoration: line-through;
   color: #efefef;
-}
-
-@media screen and (min-width: 950px) {
-  .menu__item {
-    font-size: 6em;
-  }
-}
-
-.intro {
-  position: relative;
-  padding: 1.5em;
-  min-height: 100vh;
-  font-family: "Cormorant", serif;
-  text-align: center;
-  z-index: 1;
-  opacity: 0;
-  transition: all 0.85s ease-in-out;
-}
-
-.intro.intro--loaded {
-  opacity: 1;
+  margin-bottom: 2rem;
 }
 
 .intro a {
   display: inline-block;
-  color: #efefef;
-  background: #1d1d1d;
+  position: relative;
+  color: #333333;
   text-decoration: none;
-  padding: 0 0.2em;
+  padding: 0.2em 0.05em;
+  border-bottom: 2px solid #333333;
+}
+
+.intro a:hover {
+  color: #efefef;
+}
+
+.intro a:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 0;
+  top: 50%;
+  right: 50%;
+  bottom: 50%;
+  left: 50%;
+  background: #333333;
+  z-index: -1;
+  transition: all 0.1s cubic-bezier(0, 0.59, 1, 0.26);
+}
+
+.intro a:hover:after {
+  width: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.intro__container {
+  width: 50%;
+  max-width: 768px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+@media screen and (max-width: 700px) {
+  .intro__container {
+    width: 75%;
+  }
 }
 
 .intro__name {
-  display: inline-block;
-  width: auto;
-  font-size: 4em;
-  color: #1d1d1d;
+  position: relative;
+  font-family: cardo, serif;
+  font-size: 2.6em;
   font-weight: 700;
-  font-style: italic;
-  margin: 1em auto 0.3em;
-  opacity: 0;
-  transform: translateY(-25%);
-  transition: all 0.4s ease-in-out;
-}
-
-@media screen and (max-height: 720px) {
-  .intro__name {
-    margin-top: 0.3em;
-  }
-}
-
-@media screen and (min-width: 500px) {
-  .intro__name {
-    font-size: 6em;
-  }
-}
-
-@media screen and (min-width: 950px) {
-  .intro__name {
-    font-size: 10em;
-  }
-}
-
-.intro--loaded .intro__name {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.intro__divider {
-  width: 33%;
-  height: 5px;
-  margin-top: -1.5em;
-  margin-bottom: 1.5em;
-  margin-left: auto;
-  margin-right: auto;
-  background: #1d1d1d;
-  border: none;
-}
-
-@media screen and (min-width: 500px) {
-  .intro__divider {
-    margin-top: -2.5em;
-    margin-bottom: 2.5em;
-  }
-}
-
-@media screen and (min-width: 950px) {
-  .intro__divider {
-    margin-top: -4.5em;
-    margin-bottom: 5em;
-  }
+  color: #333333;
+  line-height: 1.2em;
+  letter-spacing: 0.03em;
+  margin-bottom: 1rem;
 }
 
 .intro__subhead {
-  font-size: 1.6em;
-  color: #1d1d1d;
-  font-weight: 700;
-  font-style: italic;
-  text-align: center;
+  position: relative;
+  font-family: cardo, serif;
+  font-size: 1.33em;
+  margin-top: 0;
+  margin-bottom: 2.66em;
 }
 
-.intro__details {
-  width: 80%;
-  margin: 0 auto;
-  font-weight: 400;
-  color: #1d1d1d;
-  font-size: 1.3125em;
-  line-height: 1.45em;
-  text-align: center;
+.intro__subhead:after {
+  content: '†';
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 133%;
+  transform: rotateZ(180deg);
 }
 
-@media screen and (min-width: 950px) {
-  .intro__details {
-    width: 50%;
-    max-width: 768px;
-  }
+.intro__details em {
+  font-family: cardo, serif;
 }
 
 .intro__sites {
-  list-style: none;
+  padding-left: 0;
 }
 
 .intro__sites li {
   display: inline-block;
+  margin-right: 1.3em;
 }
 
-.cubes {
-  position: fixed;
-  z-index: -1;
-  width: 100%;
-  top: 0;
-  bottom: 0;
-  opacity: 0.7;
-  perspective: 10000px;
-}
-
-.cube {
-  width: 200px;
-  height: 200px;
-  position: relative;
-  transform: rotateY(20deg) rotateX(-20deg);
-  transform-style: preserve-3d;
-}
-
-.cube__animation-wrapper {
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  animation: spin 25s linear infinite;
-}
-
-.cube__face {
-  width: 200px;
-  height: 200px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform-origin: 50% 50%;
-  background: rgba(0, 0, 0, 0.2);
-  border: 1px solid #ffffff;
-}
-
-.cube__face--front {
-  transform: translateZ(100px);
-}
-
-.cube__face--back {
-  transform: translateZ(-100px);
-}
-
-.cube__face--top {
-  transform: translateY(-100px) rotateX(-90deg);
-}
-
-.cube__face--bottom {
-  transform: translateY(100px) rotateX(90deg);
-}
-
-.cube__face--left {
-  transform: translateX(-100px) rotateY(-90deg);
-}
-
-.cube__face--right {
-  transform: translateX(100px) rotateY(90deg);
-}
-
-@keyframes spin {
-  0% {
-    transform: rotateZ(0deg);
-  }
-  100% {
-    transform: rotateZ(360deg);
-  }
+.intro__sites li:last-of-type {
+  margin-right: 0;
 }
 
 .copyright {
-  position: fixed;
-  bottom: 40px;
   width: 100%;
+  font-family: cardo, serif;
+  font-size: 0.8em;
   text-align: center;
   color: #cccccc;
 }

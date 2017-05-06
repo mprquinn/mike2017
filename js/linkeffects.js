@@ -15,6 +15,7 @@
 	                  '#FF0A47',
 	                  '#FF0AC2',
 	                  '#47FF0A'];
+	  console.log(itemDim);
 	  
 	  const chosenC = Math.floor(Math.random() * colors.length),
 	        chosenS = Math.floor(Math.random() * shapes.length);
@@ -26,14 +27,15 @@
 	    radiusX: itemSize.x,
 	    radiusY: itemSize.y,
 	    count: 8,
+	    isShowEnd: false,
 	    
 	    children: {
-	      shape: shapes[chosenS],
+	      shape: 'line',
 	      radius: 10,
 	      scale: {0.8: 1},
 	      fill: 'none',
 	      points: 7,
-	      stroke: colors[chosenC],
+	      stroke: '#333333',
 	      strokeDasharray: '100%',
 	      strokeDashoffset: { '-100%' : '100%' },
 	      duration: 350,
