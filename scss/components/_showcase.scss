@@ -1,0 +1,32 @@
+.showcase {
+	display: block;
+	width: 100%;
+	clear: both;
+}
+
+.showcase__title {
+	width: 100%;
+	clear: both;
+	text-align: center;
+}
+
+.showcase__item {
+	min-height: 100vh;
+	text-align: center;
+}
+
+.showcase__item__description {
+	width: 33%;
+	clear: both;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.showcase__item__image {
+	width: 50%;
+	margin: 0 auto;
+}
+
+.showcase__item__image img {
+	width: 100%;
+}

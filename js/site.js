@@ -16,9 +16,11 @@
 	}
 
 
-	function toggleNav() {
+	function toggleNav(e) {
+		e.preventDefault();
 		toggleNav = !toggleNav;
 		menu.classList.toggle('menu--opened');
 		menuToggle.classList.toggle('menu--opened');
 	}
+
 })();

@@ -1,5 +1,5 @@
 ;(function () {
-	const links = document.querySelectorAll('.intro a');
+	const links = document.querySelectorAll('section a');
 
 	links.forEach(link => link.addEventListener('mouseenter', shootLines));
 
@@ -15,15 +15,14 @@
 	                  '#FF0A47',
 	                  '#FF0AC2',
 	                  '#47FF0A'];
-	  console.log(itemDim);
 	  
 	  const chosenC = Math.floor(Math.random() * colors.length),
 	        chosenS = Math.floor(Math.random() * shapes.length);
-	  
+	        
 	  // create shape
 	  const burst = new mojs.Burst({
-	    left: itemDim.left + (itemSize.x/2),
-	    top: itemDim.top + (itemSize.y/2),
+	    left: (itemDim.left + (itemSize.x/2) + window.pageXOffset),
+	    top: (itemDim.top + (itemSize.y/2) + window.pageYOffset),
 	    radiusX: itemSize.x,
 	    radiusY: itemSize.y,
 	    count: 8,
