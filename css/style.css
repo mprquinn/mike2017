@@ -466,7 +466,7 @@ body {
 
 section {
   display: flex;
-  height: 100vh;
+  min-height: 100vh;
   align-items: center;
 }
 
@@ -646,6 +646,7 @@ section a:hover:after {
   width: 100%;
   clear: both;
   text-align: center;
+  margin-bottom: 2em;
 }
 
 .showcase__item {
@@ -654,19 +655,21 @@ section a:hover:after {
 }
 
 .showcase__item__description {
-  width: 33%;
+  width: 50%;
+  max-width: 768px;
   clear: both;
   margin: 0 auto;
   text-align: center;
 }
 
 .showcase__item__image {
-  width: 50%;
+  background: #111111;
   margin: 0 auto;
 }
 
 .showcase__item__image img {
   width: 100%;
+  max-width: 768px;
 }
 
 .copyright {

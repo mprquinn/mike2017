@@ -1,0 +1,1 @@
+;(()=>{const b=document.querySelectorAll('.showcase__item__image');b.forEach(workImage=>a(workImage));function a(c){const d=c.children,e=['circle','zigzag'],f='#efefef',g=c.getBoundingClientRect(),h=c.offsetTop,i=20;let j,k=20;console.log(h);const l=new mojs.Shape({shape:e[0],stroke:f,strokeWidth:3,radius:5,fill:'none',isShowStart:!0,left:g.left+10,top:h+10})}})();
