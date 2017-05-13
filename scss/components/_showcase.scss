@@ -25,11 +25,13 @@
 }
 
 .showcase__item__image {
-	background: #111111;
+	// background: #111111;
 	margin: 0 auto;
 }
 
 .showcase__item__image img {
+	position: relative;
 	width: 100%;
 	max-width: 768px;
+	z-index: 2;
 }
